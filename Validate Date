@@ -1,0 +1,23 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Define the input string
+        string inputString = "Hdjsh asd2324234jghjsd hjsdg sdhk  12212021 idf32432 32423 d34234jh dfh";
+
+        // Define the regular expression pattern to match MMDDYYYY format
+        string pattern = @"\b(0[1-9]|1[0-2])(0[1-9]|1\d|2\d|3[01])(19|20)\d{2}\b";
+
+        // Find all matches in the input string
+        MatchCollection matches = Regex.Matches(inputString, pattern);
+
+        // Print the valid dates found
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
