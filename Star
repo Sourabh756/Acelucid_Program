@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Prompt the user to enter the height of the triangle
+        Console.Write("Enter the height of the triangle: ");
+        int height = Convert.ToInt32(Console.ReadLine());
+
+        // Print the triangle
+        PrintTriangle(height);
+    }
+
+    static void PrintTriangle(int height)
+    {
+        for (int i = 1; i <= height; i++)
+        {
+            // Print spaces
+            Console.Write(new string(' ', height - i));
+
+            // Print stars
+            Console.WriteLine(new string('*', 2 * i - 1));
+        }
+    }
+}
